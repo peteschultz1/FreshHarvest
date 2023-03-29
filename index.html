@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FreshHarvest</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <header>
-      <img src="logo.png" alt="FreshHarvest logo">
-      <h1>FreshHarvest</h1>
-    </header>
-    <form>
-      <label for="name" class="required">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email" class="required">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="produce" class="required">Produce:</label>
-      <input type="text" id="produce" name="produce" required>
-
-      <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity" min="0" step="0.01">
-
-      <label for="price" class="required">Price per unit:</label>
-      <input type="number" id="price" name="price" min="0" step="0.01" required>
-
-      <label for="harvest-date">Harvest date:</label>
-      <input type="date" id="harvest-date" name="harvest-date" min="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d', strtotime('+1 week')) ?>">
-
+<head>
+    <title>FreshHarvest - List Your Produce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>FreshHarvest</h1>
+    <form action="submit-form.php" method="post">
+        <label for="produce-name">Produce Name<sup>*</sup>:</label>
+        <input type="text" id="produce-name" name="produce-name" required>
+        <br>
+    <label for="produce-description">Produce Description:</label>
+      <input type="text" id="produce-description" name="produce-description" rows="3"></textarea>
+    <br>
       <label for="organic">Organic:</label>
-      <input type="checkbox" id="organic" name="organic">
-
-      <input type="submit" value="Submit">
+        <input type="checkbox" id="organic" name="organic">
+        <br>
+        <br>
+        <label for="quantity">Quantity<sup>*</sup>:</label>
+        <input type="number" id="quantity" name="quantity" min="1" step="1" required>
+        <br>
+        <label for="price">Price Per Unit (USD)<sup>*</sup>:</label>
+        <input type="number" id="price" name="price" min="0.01" step="0.01" required>
+        <br>
+        <label for="harvest-date">Harvest Date<sup>*</sup>:</label>
+        <input type="date" id="harvest-date" name="harvest-date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+1 week')); ?>" required>
+        <br>
+        <input type="submit" value="Submit">
+        <span class="error-message" id="quantity-error"></span>
+        <span class="error-message" id="price-error"></span>
     </form>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
