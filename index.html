@@ -7,16 +7,33 @@
 	<link rel="stylesheet" href="MainStyle.css">
 </head>
 <body>
-	<div class="navbar">
-		<a href="#" class="menu-icon" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
-		<a href="#" class="logo">FreshHarvest</a>
-		<div id="menu" class="menu">
-			<a href="#">Home</a>
-			<a href="#">About</a>
-			<a href="#">Contact</a>
-			<a href="ListYourProduce.html">List Your Produce</a>
-		</div>
-	</div>
+    
+
+    <nav class="navbar">
+        <div class="logo">FreshHarvest</div>
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle"/>
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class=&rdquo;menu&rdquo;>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            <li class="Listings">
+            <a href="/">Listings</a>
+            <!-- DROPDOWN MENU -->
+            <ul class="Listings">
+            <li><a href="ListYourProduce.html">Add Listings </a></li>
+            <li><a href="/">Manage Listings</a></li>
+            </ul>
+            </li>
+            <li><a href="/">Contact</a></li>
+            </div>
+            </ul>
+        </nav>
+        
+	
 
 	<div class="content">
 		<h1>Welcome to FreshHarvest</h1>
